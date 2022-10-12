@@ -1,0 +1,112 @@
+==38144== Memcheck, a memory error detector
+==38144== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==38144== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==38144== Command: ./app/shell-app
+==38144== 
+--38144-- Valgrind options:
+--38144--    --leak-check=full
+--38144--    -v
+--38144-- Contents of /proc/version:
+--38144--   Linux version 5.14.0-1052-oem (buildd@lcy02-amd64-106) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #59-Ubuntu SMP Fri Sep 9 09:37:59 UTC 2022
+--38144-- 
+--38144-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--38144-- Page sizes: currently 4096, max supported 4096
+--38144-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--38144-- Reading syms from /home/naveen/courses/ENPM808x/valgrind/build/app/shell-app
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--38144--   Considering /usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug ..
+--38144--   .. build-id is valid
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--38144--    object doesn't have a symbol table
+--38144--    object doesn't have a dynamic symbol table
+--38144-- Scheduler: using generic scheduler lock implementation.
+--38144-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==38144== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-38144-by-naveen-on-???
+==38144== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-38144-by-naveen-on-???
+==38144== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-38144-by-naveen-on-???
+==38144== 
+==38144== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==38144== don't want to do, unless you know exactly what you're doing,
+==38144== or are doing some strange experiment):
+==38144==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=38144 ...command...
+==38144== 
+==38144== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==38144==   /path/to/gdb ./app/shell-app
+==38144== and then give GDB the following command
+==38144==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=38144
+==38144== --pid is optional if only one valgrind process is running
+==38144== 
+--38144-- REDIR: 0x4022e20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--38144-- REDIR: 0x4022bf0 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--38144--    object doesn't have a symbol table
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--38144--    object doesn't have a symbol table
+==38144== WARNING: new redirection conflicts with existing -- ignoring it
+--38144--     old: 0x04022e20 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--38144--     new: 0x04022e20 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--38144-- REDIR: 0x401f600 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--38144-- REDIR: 0x4023380 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--38144--    object doesn't have a symbol table
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--38144--    object doesn't have a symbol table
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--38144--   Considering /usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug ..
+--38144--   .. build-id is valid
+--38144-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.31.so
+--38144--   Considering /usr/lib/debug/.build-id/fe/91b4090ea04c1559ff71dd9290062776618891.debug ..
+--38144--   .. build-id is valid
+--38144-- REDIR: 0x4b2a480 (libc.so.6:memmove) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29780 (libc.so.6:strncpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a7b0 (libc.so.6:strcasecmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b290a0 (libc.so.6:strcat) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b297e0 (libc.so.6:rindex) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2bc50 (libc.so.6:rawmemchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b46ce0 (libc.so.6:wmemchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b46820 (libc.so.6:wcscmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a5e0 (libc.so.6:mempcpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a410 (libc.so.6:bcmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29710 (libc.so.6:strncmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29150 (libc.so.6:strcmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a540 (libc.so.6:memset) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b467e0 (libc.so.6:wcschr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29670 (libc.so.6:strnlen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29230 (libc.so.6:strcspn) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a800 (libc.so.6:strncasecmp) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b291d0 (libc.so.6:strcpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a950 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b47f50 (libc.so.6:wcsnlen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b46860 (libc.so.6:wcscpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29820 (libc.so.6:strpbrk) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29100 (libc.so.6:index) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29630 (libc.so.6:strlen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b32bb0 (libc.so.6:memrchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a850 (libc.so.6:strcasecmp_l) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a3d0 (libc.so.6:memchr) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b46930 (libc.so.6:wcslen) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b29ae0 (libc.so.6:strspn) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a750 (libc.so.6:stpncpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a6f0 (libc.so.6:stpcpy) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2bc90 (libc.so.6:strchrnul) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4b2a8a0 (libc.so.6:strncasecmp_l) redirected to 0x48331d0 (_vgnU_ifunc_wrapper)
+--38144-- REDIR: 0x4c12500 (libc.so.6:__strrchr_avx2) redirected to 0x483ea10 (rindex)
+--38144-- REDIR: 0x4b240e0 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--38144-- REDIR: 0x4c126d0 (libc.so.6:__strlen_avx2) redirected to 0x483ef40 (strlen)
+--38144-- REDIR: 0x4c0ecc0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x48421e0 (bcmp)
+--38144-- REDIR: 0x4c0dbd0 (libc.so.6:__strcmp_avx2) redirected to 0x483fed0 (strcmp)
+--38144-- REDIR: 0x4c156c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4843660 (mempcpy)
+--38144-- REDIR: 0x4937b20 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x483bdf0 (operator new(unsigned long))
+--38144-- REDIR: 0x4935d70 (libstdc++.so.6:operator delete(void*)) redirected to 0x483cf50 (operator delete(void*))
+--38144-- REDIR: 0x4935d80 (libstdc++.so.6:operator delete(void*, unsigned long)) redirected to 0x483d160 (operator delete(void*, unsigned long))
+Averaged sensor reading: 10
+DONE
+--38144-- REDIR: 0x4b246d0 (libc.so.6:free) redirected to 0x483c9d0 (free)
+==38144== 
+==38144== HEAP SUMMARY:
+==38144==     in use at exit: 0 bytes in 0 blocks
+==38144==   total heap usage: 4 allocs, 4 frees, 76,844 bytes allocated
+==38144== 
+==38144== All heap blocks were freed -- no leaks are possible
+==38144== 
+==38144== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
