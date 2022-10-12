@@ -7,7 +7,7 @@
 ## Installation
 ```
 git clone --recursive https://github.com/nvnmangla/valgrind
-cd <path to repository>
+cd valgrind
 mkdir build
 cd build
 cmake ..
